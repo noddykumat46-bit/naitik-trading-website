@@ -9,7 +9,7 @@
 body{
   margin:0;
   font-family:Arial;
-  background:#0a0a0a;
+  background:#070707;
   color:white;
 }
 
@@ -18,68 +18,51 @@ nav{
   top:0;
   width:100%;
   background:#000;
-  padding:18px 40px;
+  padding:18px 35px;
   display:flex;
   justify-content:space-between;
   border-bottom:1px solid #222;
   z-index:1000;
 }
 
-nav h1{font-size:20px;letter-spacing:1px;}
+nav h1{font-size:20px;}
 nav a{color:#aaa;margin:0 12px;text-decoration:none;}
 
 .hero{
   padding:140px 20px 80px;
   text-align:center;
-  background:linear-gradient(#0a0a0a,#111);
+  background:linear-gradient(#070707,#111);
 }
 
-.hero h2{
-  font-size:52px;
-  margin-bottom:10px;
-}
-
-.hero p{color:#aaa;font-size:18px;}
+.hero h2{font-size:52px;}
+.hero p{color:#aaa}
 
 .btn{
   display:inline-block;
-  padding:12px 20px;
+  padding:12px 18px;
   margin:10px;
-  border-radius:8px;
   background:white;
   color:black;
+  border-radius:8px;
   font-weight:bold;
   text-decoration:none;
 }
 
-.section{
-  padding:70px 40px;
-}
+.section{padding:70px 40px;}
 
-.title{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.title h2{font-size:32px;}
+.title{text-align:center;margin-bottom:50px;}
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:25px;
 }
 
 .card{
-  background:#141414;
+  background:#121212;
   border:1px solid #222;
-  border-radius:15px;
+  border-radius:16px;
   overflow:hidden;
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  border-color:#555;
 }
 
 .card img{
@@ -88,21 +71,30 @@ nav a{color:#aaa;margin:0 12px;text-decoration:none;}
   object-fit:cover;
 }
 
-.card-content{
-  padding:18px;
-}
+.card-content{padding:20px;}
 
-.card h3{margin:0 0 10px;}
+h3{margin-top:0;color:#fff;}
 
 .badge{
   display:inline-block;
-  background:#222;
-  padding:4px 10px;
+  background:#1f1f1f;
+  padding:5px 10px;
   font-size:12px;
+  color:#aaa;
   border-radius:6px;
   margin-bottom:10px;
-  color:#aaa;
 }
+
+.spec-title{
+  margin-top:15px;
+  color:#00ffcc;
+  font-size:14px;
+  font-weight:bold;
+}
+
+p, li{color:#bbb;font-size:14px;line-height:1.5;}
+
+ul{padding-left:18px;}
 
 table{
   width:100%;
@@ -113,53 +105,50 @@ table{
 
 td{
   border:1px solid #333;
-  padding:6px;
+  padding:7px;
   text-align:center;
   color:#ccc;
 }
 
-.contact{
-  text-align:center;
-  padding:60px 20px;
-  background:#111;
+.section-block{
+  margin-top:10px;
 }
 
 footer{
   text-align:center;
   padding:20px;
-  border-top:1px solid #222;
   color:#666;
+  border-top:1px solid #222;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-  <h1>NAITIK TRADING</h1>
-  <div>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-  </div>
+<h1>NAITIK TRADING</h1>
+<div>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <h2>Industrial Material Supplier</h2>
-  <p>Boiler Bed Material • Fire Bricks • Charcoal • Construction Materials</p>
+<h2>Industrial Material Supplier</h2>
+<p>Boiler Bed Material • Fire Bricks • Charcoal • Engineering Supplies</p>
 
-  <a class="btn" href="https://wa.me/919479062816">WhatsApp</a>
-  <a class="btn" href="mailto:noddykumat46@gmail.com">Email</a>
-  <a class="btn" href="tel:+919479062816">Call</a>
+<a class="btn" href="https://wa.me/919479062816">WhatsApp</a>
+<a class="btn" href="mailto:noddykumat46@gmail.com">Email</a>
+<a class="btn" href="tel:+919479062816">Call</a>
 </div>
 
 <!-- PRODUCTS -->
 <div class="section" id="products">
 
 <div class="title">
-  <h2>Our Industrial Products</h2>
-  <p>High quality tested materials with full specifications</p>
+<h2>Premium Industrial Products</h2>
+<p>Technical specification based supply materials</p>
 </div>
 
 <div class="grid">
@@ -169,16 +158,46 @@ footer{
 <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd">
 
 <div class="card-content">
-<span class="badge">Boiler Material</span>
-<h3>Bed Material (FBC / CFBC)</h3>
+<span class="badge">BOILER MATERIAL</span>
+<h3>Boiler Bed Material (FBC / CFBC)</h3>
 
-<p>Acts as heat transfer medium in boilers ensuring stable combustion efficiency.</p>
+<p>
+Boiler bed material acts as the heat transfer medium inside fluidized bed combustion (FBC & CFBC) boilers.  
+Our graded, washed, and screened material ensures stable fluidization, uniform heat distribution, and minimum agglomeration - leading to higher boiler efficiency and reduced downtime.
+</p>
 
+<div class="spec-title">AVAILABLE SIZES</div>
+<ul>
+<li>2 mm - 5 mm</li>
+<li>5 mm - 10 mm</li>
+<li>10 mm - 20 mm</li>
+<li>Custom sizes available</li>
+</ul>
+
+<div class="spec-title">SPECIFICATIONS</div>
 <table>
-<tr><td>Size</td><td>2–20 mm</td></tr>
-<tr><td>SiO2</td><td>≥ 95%</td></tr>
+<tr><td>Bulk Density</td><td>1.45 - 1.65 g/cc</td></tr>
+<tr><td>SiO₂ Content</td><td>≥ 95%</td></tr>
 <tr><td>Moisture</td><td>&lt; 1%</td></tr>
+<tr><td>Heat Resistance</td><td>Up to 1500°C</td></tr>
+<tr><td>Shape</td><td>Sub-angular, washed</td></tr>
 </table>
+
+<div class="spec-title">APPLICATIONS</div>
+<ul>
+<li>FBC / CFBC Boilers</li>
+<li>AFBC Boilers</li>
+<li>Sugar, Paper, Textile & Power Plants</li>
+<li>Heat Treatment Furnaces</li>
+</ul>
+
+<div class="spec-title">FEATURES</div>
+<ul>
+<li>High thermal stability</li>
+<li>Uniform particle size distribution</li>
+<li>Low fines content</li>
+<li>Long bed life</li>
+</ul>
 </div>
 </div>
 
@@ -187,16 +206,33 @@ footer{
 <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7">
 
 <div class="card-content">
-<span class="badge">Refractory</span>
+<span class="badge">REFRACTORY</span>
 <h3>Fire Bricks</h3>
 
-<p>High temperature resistant bricks for furnaces, kilns and boilers.</p>
+<p>
+High quality refractory bricks designed for extreme temperature industrial applications.
+</p>
 
+<div class="spec-title">AVAILABLE SIZES</div>
+<ul>
+<li>9x4.5x3 inch (Standard)</li>
+<li>Custom shapes available</li>
+</ul>
+
+<div class="spec-title">SPECIFICATIONS</div>
 <table>
-<tr><td>Heat</td><td>1200–1800°C</td></tr>
-<tr><td>Density</td><td>2.0–2.4 g/cc</td></tr>
-<tr><td>Alumina</td><td>30–70%</td></tr>
+<tr><td>Heat Resistance</td><td>1200°C - 1800°C</td></tr>
+<tr><td>Density</td><td>2.0 - 2.4 g/cc</td></tr>
+<tr><td>Alumina Content</td><td>30% - 70%</td></tr>
 </table>
+
+<div class="spec-title">APPLICATIONS</div>
+<ul>
+<li>Furnaces</li>
+<li>Kilns</li>
+<li>Boilers</li>
+<li>Steel Plants</li>
+</ul>
 </div>
 </div>
 
@@ -205,16 +241,33 @@ footer{
 <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5">
 
 <div class="card-content">
-<span class="badge">Fuel</span>
+<span class="badge">FUEL</span>
 <h3>Industrial Charcoal</h3>
 
-<p>High carbon fuel used in forging, metallurgy and industrial heating.</p>
+<p>
+High carbon content fuel used in metallurgy and industrial heating applications.
+</p>
 
+<div class="spec-title">AVAILABLE TYPES</div>
+<ul>
+<li>Lump Charcoal</li>
+<li>Powder Charcoal</li>
+<li>Industrial Grade</li>
+</ul>
+
+<div class="spec-title">SPECIFICATIONS</div>
 <table>
-<tr><td>Carbon</td><td>75–90%</td></tr>
+<tr><td>Fixed Carbon</td><td>75% - 90%</td></tr>
 <tr><td>Moisture</td><td>&lt; 8%</td></tr>
-<tr><td>Ash</td><td>&lt; 5%</td></tr>
+<tr><td>Ash Content</td><td>&lt; 5%</td></tr>
 </table>
+
+<div class="spec-title">APPLICATIONS</div>
+<ul>
+<li>Forging Industry</li>
+<li>Metal Heating</li>
+<li>Industrial Boilers</li>
+</ul>
 </div>
 </div>
 
@@ -222,9 +275,9 @@ footer{
 </div>
 
 <!-- CONTACT -->
-<div class="contact" id="contact">
-<h2>Get Best Price Quote</h2>
-<p>Call / WhatsApp / Email for bulk orders</p>
+<div class="section" id="contact" style="text-align:center;">
+<h2>Get Best Quote</h2>
+<p>Contact us for bulk industrial supply</p>
 
 <a class="btn" href="https://wa.me/919479062816">WhatsApp</a>
 <a class="btn" href="mailto:noddykumat46@gmail.com">Email</a>
