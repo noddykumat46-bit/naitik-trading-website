@@ -13,7 +13,6 @@ body{
   color:white;
 }
 
-/* NAV */
 nav{
   position:fixed;
   top:0;
@@ -29,13 +28,12 @@ nav{
 nav h1{font-size:18px;}
 nav a{color:#aaa;margin:0 10px;text-decoration:none;font-size:14px;}
 
-/* HERO */
 .hero{
-  padding:140px 20px 50px;
+  padding:140px 20px 30px;
   text-align:center;
 }
 
-.hero h2{font-size:48px;}
+.hero h2{font-size:48px;margin:0;}
 .hero p{color:#aaa}
 
 .btn{
@@ -49,23 +47,23 @@ nav a{color:#aaa;margin:0 10px;text-decoration:none;font-size:14px;}
   text-decoration:none;
 }
 
-/* STATS */
+/* TOP STATS */
 .stats{
-  padding:50px 20px;
+  padding:40px 20px;
   text-align:center;
+  background:#0b0b0b;
 }
 
 .grid4{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
   gap:15px;
-  margin-bottom:30px;
+  margin-bottom:25px;
 }
 
 .stat h2{font-size:28px;margin:0;}
 .stat p{color:#aaa;font-size:12px;}
 
-/* PRODUCTS */
 .section{
   padding:60px 20px;
 }
@@ -94,8 +92,6 @@ nav a{color:#aaa;margin:0 10px;text-decoration:none;font-size:14px;}
 .card-content{
   padding:15px;
 }
-
-h3{margin:10px 0;}
 
 table{
   width:100%;
@@ -148,21 +144,21 @@ footer{
 <a class="btn" href="tel:+919479062816">Call</a>
 </div>
 
-<!-- STATS + ABOUT -->
+<!-- 🔥 TOP STATS (NOW FIXED HERE) -->
 <div class="stats">
 
 <div class="grid4">
-<div class="stat"><h2>4+</h2><p>Years</p></div>
-<div class="stat"><h2>5+</h2><p>Categories</p></div>
-<div class="stat"><h2>1000+ MT</h2><p>Annual Supply</p></div>
-<div class="stat"><h2>Pan-India</h2><p>Delivery</p></div>
+  <div class="stat"><h2>4+</h2><p>Years</p></div>
+  <div class="stat"><h2>5+</h2><p>Categories</p></div>
+  <div class="stat"><h2>1000+ MT</h2><p>Supply</p></div>
+  <div class="stat"><h2>Pan-India</h2><p>Delivery</p></div>
 </div>
 
 <h2>NAITIK TRADING</h2>
 <p style="color:#aaa;">Quality you can measure. Supply you can depend on.</p>
 
 <p style="color:#777;max-width:800px;margin:auto;line-height:1.6;">
-For over 4+ years, Naitik Trading has been supplying industrial materials like boiler bed material, fire bricks, and charcoal across India. We ensure tested quality, bulk supply and on-time delivery for industrial plants.
+For over 4+ years, Naitik Trading has been supplying industrial materials across India including boiler bed material, fire bricks and charcoal with tested quality and timely delivery.
 </p>
 
 </div>
@@ -172,21 +168,17 @@ For over 4+ years, Naitik Trading has been supplying industrial materials like b
 
 <div class="title">
 <h2>Our Products</h2>
-<p style="color:#aaa;">Technical specification based supply</p>
+<p style="color:#aaa;">Industrial grade tested materials</p>
 </div>
 
 <div class="cards">
 
-<!-- BED MATERIAL -->
+<!-- BED -->
 <div class="card">
 <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd">
-
 <div class="card-content">
 <h3>Boiler Bed Material</h3>
-
-<p style="color:#aaa;font-size:13px;">
-Acts as heat transfer medium in FBC/CFBC boilers ensuring stable combustion.
-</p>
+<p style="color:#aaa;font-size:13px;">Heat transfer medium for FBC/CFBC boilers.</p>
 
 <table>
 <tr><td>Size</td><td>2–20 mm</td></tr>
@@ -194,47 +186,36 @@ Acts as heat transfer medium in FBC/CFBC boilers ensuring stable combustion.
 <tr><td>Moisture</td><td>&lt;1%</td></tr>
 <tr><td>Heat</td><td>1500°C</td></tr>
 </table>
-
 </div>
 </div>
 
-<!-- FIRE BRICKS -->
+<!-- BRICKS -->
 <div class="card">
 <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7">
-
 <div class="card-content">
 <h3>Fire Bricks</h3>
-
-<p style="color:#aaa;font-size:13px;">
-High temperature refractory bricks for industrial furnaces.
-</p>
+<p style="color:#aaa;font-size:13px;">High temperature refractory bricks.</p>
 
 <table>
 <tr><td>Heat</td><td>1200–1800°C</td></tr>
 <tr><td>Density</td><td>2.0–2.4</td></tr>
 <tr><td>Alumina</td><td>30–70%</td></tr>
 </table>
-
 </div>
 </div>
 
 <!-- CHARCOAL -->
 <div class="card">
 <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5">
-
 <div class="card-content">
 <h3>Industrial Charcoal</h3>
-
-<p style="color:#aaa;font-size:13px;">
-High carbon fuel used in forging and industrial heating.
-</p>
+<p style="color:#aaa;font-size:13px;">High carbon industrial fuel.</p>
 
 <table>
 <tr><td>Carbon</td><td>75–90%</td></tr>
 <tr><td>Moisture</td><td>&lt;8%</td></tr>
 <tr><td>Ash</td><td>&lt;5%</td></tr>
 </table>
-
 </div>
 </div>
 
@@ -244,7 +225,7 @@ High carbon fuel used in forging and industrial heating.
 <!-- CONTACT -->
 <div class="contact" id="contact">
 <h2>Get Best Quote</h2>
-<p style="color:#aaa;">Contact for bulk supply</p>
+<p style="color:#aaa;">Call / WhatsApp / Email</p>
 
 <a class="btn" href="https://wa.me/919479062816">WhatsApp</a>
 <a class="btn" href="mailto:noddykumat46@gmail.com">Email</a>
