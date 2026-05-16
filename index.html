@@ -1,362 +1,228 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Naitik Trading</title>  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naitik Trading</title>
 
-    body {
-      background: #050505;
-      color: white;
-      line-height: 1.6;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
 
-    nav {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      background: rgba(0,0,0,0.9);
-      backdrop-filter: blur(10px);
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #1f1f1f;
-    }
+body {
+  background: #050505;
+  color: white;
+  line-height: 1.6;
+}
 
-    nav h1 {
-      font-size: 28px;
-      letter-spacing: 2px;
-    }
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(10px);
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1f1f1f;
+}
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
+nav h1 {
+  font-size: 28px;
+}
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
 
-    nav ul li a:hover {
-      color: #999;
-    }
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 8%;
-      background: linear-gradient(to bottom right,#0d0d0d,#000000);
-    }
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 8%;
+}
 
-    .hero-content {
-      max-width: 900px;
-    }
+.hero h2 {
+  font-size: 60px;
+}
 
-    .hero h2 {
-      font-size: 70px;
-      margin-bottom: 20px;
-    }
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    .hero p {
-      font-size: 20px;
-      color: #bcbcbc;
-      margin-bottom: 35px;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 15px 32px;
-      border-radius: 14px;
-      background: white;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .btn:hover {
-      transform: scale(1.05);
-    }
+.card:hover {
+  transform: scale(1.05);
+}
 
-    section {
-      padding: 100px 8%;
-    }
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
 
-    .title {
-      text-align: center;
-      margin-bottom: 60px;
-    }
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
 
-    .title h2 {
-      font-size: 50px;
-      margin-bottom: 15px;
-    }
+.modal-content {
+  background: #111;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+}
 
-    .title p {
-      color: #999;
-    }
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 25px;
+}
+</style>
+</head>
 
-    .about {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-      gap: 40px;
-      align-items: center;
-    }
+<body>
 
-    .about img {
-      width: 100%;
-      border-radius: 25px;
-      height: 420px;
-      object-fit: cover;
-    }
-
-    .about-text p {
-      color: #bdbdbd;
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #111;
-      border: 1px solid #222;
-      padding: 30px;
-      border-radius: 25px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      border-color: #555;
-    }
-
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 18px;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: #aaa;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap: 25px;
-      margin-top: 50px;
-    }
-
-    .stat-box {
-      background: #101010;
-      border: 1px solid #222;
-      padding: 35px;
-      border-radius: 22px;
-      text-align: center;
-    }
-
-    .stat-box h3 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 20px;
-    }
-
-    .contact-box {
-      background: #111;
-      border: 1px solid #222;
-      padding: 50px;
-      border-radius: 30px;
-      text-align: center;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .contact-box p {
-      margin: 15px 0;
-      color: #bbb;
-      font-size: 18px;
-    }
-
-    footer {
-      border-top: 1px solid #151515;
-      padding: 35px;
-      text-align: center;
-      color: #777;
-    }
-
-    @media(max-width:768px){
-      nav ul {
-        display: none;
-      }
-
-      .hero h2 {
-        font-size: 45px;
-      }
-
-      .title h2 {
-        font-size: 36px;
-      }
-    }
-  </style></head>
-<body>  <nav>
-    <h1>NAITIK TRADING</h1><ul>
-  <li><a href="#about">About</a></li>
-  <li><a href="#products">Products</a></li>
-  <li><a href="#gallery">Gallery</a></li>
-  <li><a href="#contact">Contact</a></li>
+<nav>
+<h1>NAITIK TRADING</h1>
+<ul>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
+</nav>
 
-  </nav>  <section class="hero">
-    <div class="hero-content">
-      <h2>PREMIUM RAW MATERIAL SUPPLIER</h2><p>
-    Trusted supplier of bricks, charcoal, building materials, and raw materials with professional service and reliable delivery.
-  </p>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h2>Premium Raw Material Supplier</h2>
+    <p>Bricks, Charcoal & Construction Materials</p>
 
-  <a href="https://wa.me/919479062816" class="btn" target="_blank">
-    Contact on WhatsApp
-  </a>
-</div>
+    <a href="https://wa.me/919479062816" class="btn">WhatsApp</a>
 
-  </section>  <section id="about">
-    <div class="title">
-      <h2>About Us</h2>
-      <p>Professional raw material and building material supplier.</p>
-    </div><div class="about">
-  <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="Construction">
+    <a href="mailto:noddykumat46@gmail.com" class="btn">Email</a>
 
-  <div class="about-text">
-    <p>
-      Naitik Trading supplies premium quality bricks, charcoal, raw materials, and construction products for builders, contractors, and industrial projects.
-    </p>
+    <a href="tel:+919479062816" class="btn">Call</a>
+  </div>
+</section>
 
-    <p>
-      We focus on customer trust, fast delivery, bulk order support, and professional service to ensure smooth supply operations.
-    </p>
+<!-- PRODUCTS -->
+<section id="products">
+  <h2 style="text-align:center; margin-bottom:30px;">Products</h2>
 
-    <p>
-      Our mission is to provide dependable materials at competitive market pricing with long-term customer relationships.
-    </p>
+  <div class="cards">
+
+    <div class="card" onclick="openModal('bed')">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd">
+      <h3>Bed Materials</h3>
+    </div>
+
+    <div class="card" onclick="openModal('fire')">
+      <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7">
+      <h3>Fire Bricks</h3>
+    </div>
+
+    <div class="card" onclick="openModal('charcoal')">
+      <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5">
+      <h3>Charcoal</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✖</span>
+
+    <div id="modal-body"></div>
   </div>
 </div>
 
-<div class="stats">
-  <div class="stat-box">
-    <h3>100%</h3>
-    <p>Reliable Supply</p>
-  </div>
+<script>
+function openModal(type) {
+  let content = "";
 
-  <div class="stat-box">
-    <h3>Fast</h3>
-    <p>Delivery Service</p>
-  </div>
+  if(type === "bed") {
+    content = `
+      <h2>Bed Materials</h2>
+      <p><b>Sizes:</b> Fine, Medium, Coarse</p>
+      <p>Used in construction, RCC, plaster work.</p>
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" style="width:100%;border-radius:10px;">
+    `;
+  }
 
-  <div class="stat-box">
-    <h3>Bulk</h3>
-    <p>Order Support</p>
-  </div>
+  if(type === "fire") {
+    content = `
+      <h2>Fire Bricks</h2>
+      <p><b>Size:</b> 9x4.5x3 inch</p>
+      <p>Heat resistant up to 1800°C</p>
+      <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7" style="width:100%;border-radius:10px;">
+    `;
+  }
 
-  <div class="stat-box">
-    <h3>24/7</h3>
-    <p>Customer Support</p>
-  </div>
-</div>
+  if(type === "charcoal") {
+    content = `
+      <h2>Charcoal</h2>
+      <p><b>Types:</b> Lump, Powder</p>
+      <p>Used in industrial heating & forging</p>
+      <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5" style="width:100%;border-radius:10px;">
+    `;
+  }
 
-  </section>  <section id="products">
-    <div class="title">
-      <h2>Our Products</h2>
-      <p>Quality materials for construction and industrial use.</p>
-    </div><div class="cards">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?q=80&w=1200&auto=format&fit=crop" alt="Bricks">
+  document.getElementById("modal-body").innerHTML = content;
+  document.getElementById("modal").style.display = "flex";
+}
 
-    <h3>Bricks</h3>
-    <p>
-      High-quality construction bricks suitable for residential and commercial projects.
-    </p>
-  </div>
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1200&auto=format&fit=crop" alt="Charcoal">
-
-    <h3>Charcoal</h3>
-    <p>
-      Reliable charcoal supply for industrial and commercial requirements.
-    </p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200&auto=format&fit=crop" alt="Materials">
-
-    <h3>Building Materials</h3>
-    <p>
-      Trusted supply of raw and construction materials with dependable service.
-    </p>
-  </div>
-</div>
-
-  </section>  <section id="gallery">
-    <div class="title">
-      <h2>Project Gallery</h2>
-      <p>Professional supply and construction support visuals.</p>
-    </div><div class="gallery">
-  <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Gallery">
-  <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1200&auto=format&fit=crop" alt="Gallery">
-  <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="Gallery">
-</div>
-
-  </section>  <section id="contact">
-    <div class="title">
-      <h2>Contact Us</h2>
-      <p>Get in touch for quotations and bulk orders.</p>
-    </div><div class="contact-box">
-  <p><strong>Business:</strong> Naitik Trading</p>
-  <p><strong>Phone:</strong> +91 9479062816</p>
-  <p><strong>Location:</strong> Chhattisgarh, India</p>
-
-  <a href="https://wa.me/919479062816" class="btn" target="_blank">
-    Chat on WhatsApp
-  </a>
-</div>
-
-  </section>  <footer>
-    © 2026 Naitik Trading. All Rights Reserved.
-  </footer></body>
+</body>
 </html>
